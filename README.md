@@ -75,4 +75,4 @@ Finally, the code to load picker page is this:
 
 **Here's how it works:**
 
-[Control preview](picker.gif)
+[Control preview](https://github.com/jpmirfcb/GenericPicker/raw/master/picker.gif)
