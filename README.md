@@ -74,6 +74,6 @@ Finally, the code to load picker page is this:
 ```
 
 **Here's how it works:**
-
-![Picker's Preview](https://github.com/jpmirfcb/GenericPicker/raw/master/picker.gif)
-
+<p align="center">
+    <img src="https://github.com/jpmirfcb/GenericPicker/raw/master/picker.gif" width="300">
+</p>
