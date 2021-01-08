@@ -4,7 +4,7 @@ A reusable and customizable generic picker for Xamarin.Forms
 The purpose of this work is to have a completely customizable and reusable replacement for standard Xamarin.forms picker that allows:
 
 - Databinding
-- Lazy loading data elements
+- Scroll to download more data elements
 - Search items 
 - and finally pick an item.
 
