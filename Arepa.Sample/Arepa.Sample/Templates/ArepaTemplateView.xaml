@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Arepa.Sample.Converters;assembly=Arepa.Sample"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:controls="clr-namespace:Arepa.Sample.Controls;assembly=Arepa.Sample"
+
+             x:Class="Arepa.Sample.Templates.ArepaTemplateView">
+    <ContentView.Resources>
+        <converters:EmbeddedImageSourceConverter x:Key="EmbeddedImageSourceConverter"/>
+    </ContentView.Resources>
+    <ContentView.Content>
+      <Grid Margin="20">
+          <Grid.GestureRecognizers>
+                <TapGestureRecognizer 
+                    Command="{Binding SelectedItemCommand, Source={x:RelativeSource AncestorType={x:Type controls:GenericPicker}}}"
+                    CommandParameter="{Binding .}"/>
+          </Grid.GestureRecognizers>
+          <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="80"/>
+              <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+            <Frame CornerRadius="10" 
+                   HeightRequest="80" 
+                   WidthRequest="80"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.RowSpan="2"
+                   Padding="0">
+                <Image Source="{Binding ImageName, Converter={StaticResource EmbeddedImageSourceConverter}}"
+                       Aspect="AspectFill"/>
+
+                </Frame>
+          <Label Text="{Binding Name}"
+                 Grid.Row="0"
+                 FontAttributes="Bold"
+                 FontSize="Medium"
+                 Grid.Column="1"/>
+          <Label Text="{Binding Ingredients}"
+                 FontSize="Small"
+                 Grid.Row="1"
+                 Grid.Column="1"/>
+      </Grid>
+    </ContentView.Content>
+</ContentView>

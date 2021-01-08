@@ -1,0 +1,94 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Images\sevilla.jpg\**" />
+    <EmbeddedResource Remove="Images\sevilla.jpg\**" />
+    <None Remove="Images\sevilla.jpg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\arepa-pelua.jpg" />
+    <None Remove="Images\atleti.png" />
+    <None Remove="Images\bayern.png" />
+    <None Remove="Images\borussia.png" />
+    <None Remove="Images\catira.jpg" />
+    <None Remove="Images\city.png" />
+    <None Remove="Images\domino.jpg" />
+    <None Remove="Images\fcbarcelona.png" />
+    <None Remove="Images\gringa.jpg" />
+    <None Remove="Images\inter.png" />
+    <None Remove="Images\llanera.jpg" />
+    <None Remove="Images\manchester.png" />
+    <None Remove="Images\milan.jpg" />
+    <None Remove="Images\pabellon.jpg" />
+    <None Remove="Images\patapata.jpg" />
+    <None Remove="Images\pernil.jpg" />
+    <None Remove="Images\psg.jpg" />
+    <None Remove="Images\realdemadrid.png" />
+    <None Remove="Images\reina-pepiada.jpg" />
+    <None Remove="Images\rompe-colchon.jpg" />
+    <None Remove="Images\rumbera.jpg" />
+    <None Remove="Images\santa-barbara.jpg" />
+    <None Remove="Images\sifrina.jpg" />
+    <None Remove="Images\tottenham.jpg" />
+    <None Remove="Images\valencia.png" />
+    <None Remove="Images\viuda.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\arepa-pelua.jpg" />
+    <EmbeddedResource Include="Images\atleti.png" />
+    <EmbeddedResource Include="Images\bayern.png" />
+    <EmbeddedResource Include="Images\borussia.png" />
+    <EmbeddedResource Include="Images\catira.jpg" />
+    <EmbeddedResource Include="Images\city.png" />
+    <EmbeddedResource Include="Images\domino.jpg" />
+    <EmbeddedResource Include="Images\fcbarcelona.png" />
+    <EmbeddedResource Include="Images\gringa.jpg" />
+    <EmbeddedResource Include="Images\inter.png" />
+    <EmbeddedResource Include="Images\llanera.jpg" />
+    <EmbeddedResource Include="Images\manchester.png" />
+    <EmbeddedResource Include="Images\milan.jpg" />
+    <EmbeddedResource Include="Images\pabellon.jpg" />
+    <EmbeddedResource Include="Images\patapata.jpg" />
+    <EmbeddedResource Include="Images\pernil.jpg" />
+    <EmbeddedResource Include="Images\psg.jpg" />
+    <EmbeddedResource Include="Images\realdemadrid.png" />
+    <EmbeddedResource Include="Images\reina-pepiada.jpg" />
+    <EmbeddedResource Include="Images\rompe-colchon.jpg" />
+    <EmbeddedResource Include="Images\rumbera.jpg" />
+    <EmbeddedResource Include="Images\santa-barbara.jpg" />
+    <EmbeddedResource Include="Images\sifrina.jpg" />
+    <EmbeddedResource Include="Images\tottenham.jpg" />
+    <EmbeddedResource Include="Images\valencia.png" />
+    <EmbeddedResource Include="Images\viuda.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\GenericPicker.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Templates\ArepaTemplateView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Templates\FootballTeamTemplateView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

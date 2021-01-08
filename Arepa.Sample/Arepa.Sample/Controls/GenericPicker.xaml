@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:templates="clr-namespace:Arepa.Sample.Templates;assembly=Arepa.Sample"
+             x:Class="Arepa.Sample.Controls.GenericPicker"
+             x:Name="this">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="10">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+                <Entry Text="{Binding Search, Source={x:Reference this}}" 
+                       HorizontalOptions="FillAndExpand"/>
+                <Button Text="Search" Clicked="OnSearchButtonClicked" HorizontalOptions="End"/>
+            </StackLayout>
+            <CollectionView 
+                x:Name="CollectionViewControl" x:FieldModifier="protected"
+                RemainingItemsThreshold="0"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            RemainingItemsThresholdReachedCommand="{Binding LoadItemsCommand, Source={x:Reference this}}"
+                            ItemsSource="{Binding ItemsSource, Source={x:Reference this}}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

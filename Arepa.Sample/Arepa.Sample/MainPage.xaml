@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Arepa.Sample.Converters;assembly=Arepa.Sample"
+             x:Class="Arepa.Sample.MainPage"
+             x:Name="this">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:EmbeddedImageSourceConverter x:Key="EmbeddedImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="CenterAndExpand">
+        <Label Text="{Binding SelectionText, Source={x:Reference this}}"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" Margin="20,20,20,20"/>
+        <Image Source="{Binding SelectedImage, Source={x:Reference this}, Converter={StaticResource EmbeddedImageSourceConverter}}"></Image>
+        <Label Text="{Binding SelectedItemDescription, Source={x:Reference this}}" 
+               HorizontalTextAlignment="Center" Margin="20,20,20,20"/>
+        <Button Text="Select your favorite arepa!" Clicked="Button_OnClicked"/>
+        <Button Text="Select your favorite Team!" Clicked="SelectTeam"/>
+
+    </StackLayout>
+
+</ContentPage>
