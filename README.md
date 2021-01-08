@@ -72,3 +72,7 @@ Finally, the code to load picker page is this:
        Navigation.PushModalAsync(picker);
        
 ```
+
+**Here's how it works:**
+
+[Control preview](picker.gif)
